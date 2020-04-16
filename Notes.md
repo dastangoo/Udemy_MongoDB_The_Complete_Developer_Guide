@@ -19,4 +19,6 @@ db.passengers.insertMany([...])
 db.passengers.find().pretty()
 db.passengers.find().toArray()
 db.passengers.find().forEach((passengerData) => {printjson(passengerData)})
+db.passengers.find({}, {name: 1}).pretty()
+db.passengers.find({}, {name: 1, _id: 0}).pretty()
 ```
