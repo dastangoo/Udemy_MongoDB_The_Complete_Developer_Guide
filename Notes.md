@@ -15,4 +15,8 @@ db.flightData.find({...}).pretty()
 db.flightData.find({distance: {$gt: 900}})
 db.flightData.update({...}, {...})
 db.flightData.replaceOne({...}, {...})
+db.passengers.insertMany([...])
+db.passengers.find().pretty()
+db.passengers.find().toArray()
+db.passengers.find().forEach((passengerData) => {printjson(passengerData)})
 ```
