@@ -34,5 +34,7 @@ use shop
 db.products.insertOne({name: "A book", price: 12.99})
 db.products.find().pretty()
 db.products.insertOne({title: "T-Shirt", seller: {name: "John", age: 29}})
+db.products.deleteMany()
+db.products.find().pretty()
 ```
 
