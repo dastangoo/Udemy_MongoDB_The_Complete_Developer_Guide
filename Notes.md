@@ -25,5 +25,7 @@ db.passengers.findOne({name: "<someone>"}).hobbies
 db.passentger.find({hobbies: "sports"}).pretty()
 db.flightData.find({"status.description": "on-time"}).pretty()
 db.flightData.find({"status.description.responsible": "on-time"}).pretty()
+db.flightData.drop()
+db.dropDatabase()
 ```
 
