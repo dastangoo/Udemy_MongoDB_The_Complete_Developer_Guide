@@ -27,5 +27,12 @@ db.flightData.find({"status.description": "on-time"}).pretty()
 db.flightData.find({"status.description.responsible": "on-time"}).pretty()
 db.flightData.drop()
 db.dropDatabase()
+use shop
+db.dropDatabase()
+show dbs
+use shop
+db.products.insertOne({name: "A book", price: 12.99})
+db.products.find().pretty()
+db.products.insertOne({title: "T-Shirt", seller: {name: "John", age: 29}})
 ```
 
