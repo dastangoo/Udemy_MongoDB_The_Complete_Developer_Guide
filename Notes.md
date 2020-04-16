@@ -21,4 +21,9 @@ db.passengers.find().toArray()
 db.passengers.find().forEach((passengerData) => {printjson(passengerData)})
 db.passengers.find({}, {name: 1}).pretty()
 db.passengers.find({}, {name: 1, _id: 0}).pretty()
+db.passengers.findOne({name: "<someone>"}).hobbies
+db.passentger.find({hobbies: "sports"}).pretty()
+db.flightData.find({"status.description": "on-time"}).pretty()
+db.flightData.find({"status.description.responsible": "on-time"}).pretty()
 ```
+
