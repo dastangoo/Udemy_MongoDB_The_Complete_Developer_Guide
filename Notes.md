@@ -11,4 +11,6 @@ db.flightData.deleteMany({...})
 db.flightData.updateOne({}, {$set: {...}})
 db.flightData.updateMany({}, {$set: {...}}) 
 db.flightData.insertMany([...])
+db.flightData.find({...}).pretty()
+db.flightData.find({distance: {$gt: 900}})
 ```
