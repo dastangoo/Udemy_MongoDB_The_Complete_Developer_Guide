@@ -49,5 +49,10 @@ db.numbers.drop()
 db.numbers.insertOne({a: NumbertInt(1)})
 db.stats()
 typeof db.numbers.findOne().a
+db.patients.insertOne({})
+db.diseaseSummaries.insertOne({})
+var dsid = db.patients.findOne().diseaseSummary
+db.diseaseSummaries.findOne({_id: dsid})
+db.patients.deleteMany({})
 ```
 
