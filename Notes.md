@@ -36,5 +36,18 @@ db.products.find().pretty()
 db.products.insertOne({title: "T-Shirt", seller: {name: "John", age: 29}})
 db.products.deleteMany()
 db.products.find().pretty()
+db.dropDatabase()
+use companyData
+db.companies.insertOne({...})
+db.companies.findOne()
+db.numbers.insertOne({})
+db.numbers.findOne()
+db.stats()
+db.companies.drop()
+show collections
+db.numbers.drop()
+db.numbers.insertOne({a: NumbertInt(1)})
+db.stats()
+typeof db.numbers.findOne().a
 ```
 
