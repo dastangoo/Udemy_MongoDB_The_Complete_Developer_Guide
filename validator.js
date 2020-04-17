@@ -37,5 +37,6 @@ db.createCollection("posts", {
         }
       }
     }
-  }
+  },
+  validationAction: "warning"
 })
