@@ -55,5 +55,7 @@ var dsid = db.patients.findOne().diseaseSummary
 db.diseaseSummaries.findOne({_id: dsid})
 db.patients.deleteMany({})
 db.books.aggregate([{$lookup: {from: "authros", localField: "authors", foreginField: "_id", as: "creators"}}])
+db.createCollection("posts", {<validator})
+db.runCommand({collMod: "posts"}, <validator>)
 ```
 
