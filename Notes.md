@@ -54,5 +54,6 @@ db.diseaseSummaries.insertOne({})
 var dsid = db.patients.findOne().diseaseSummary
 db.diseaseSummaries.findOne({_id: dsid})
 db.patients.deleteMany({})
+db.books.aggregate([{$lookup: {from: "authros", localField: "authors", foreginField: "_id", as: "creators"}}])
 ```
 
