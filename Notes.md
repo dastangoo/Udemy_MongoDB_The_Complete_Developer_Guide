@@ -89,4 +89,19 @@ show collections
 db.posts.help()
 db.stats()
 db.posts.stats()
+---
+show dbs
+user contactData
+db.dropDatabase()
+use test
+db.dropDatabase()
+show dbs
+use contactData
+db.persons.insertOne({
+    name: "John",
+    age: 30,
+    hobbies: ["Sports", "Cooking"]
+})
+db.persons.find().pretty()
+db.persons.findOne()
 ```
