@@ -105,4 +105,5 @@ db.persons.insertOne({
 db.persons.find().pretty()
 db.persons.findOne()
 db.hobbies.insertMany([...], {ordered: true})
+db.persons.insertOne({...}, {writeConcern: {w: 1, j: true, wtimeout: 200}})
 ```
