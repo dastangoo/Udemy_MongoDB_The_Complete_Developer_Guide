@@ -70,4 +70,23 @@ net start MongoDB
 ---
 mongod --config /usr/local/etc/mongod.conf
 mongod -f /usr/local/etc/mongod.conf
+---
+mongod --help | less
+mongo --help | less
+mongo --nodb
+mongo --quiet
+mongo
+---
+help
+help admin
+ls()
+pwd()
+hostname()
+show dbs
+use test
+db.help()
+show collections
+db.posts.help()
+db.stats()
+db.posts.stats()
 ```
