@@ -47,7 +47,6 @@ db.companies.drop()
 show collections
 db.numbers.drop()
 db.numbers.insertOne({a: NumbertInt(1)})
-A
 db.stats()
 typeof db.numbers.findOne().a
 db.patients.insertOne({})
@@ -108,4 +107,7 @@ db.hobbies.insertMany([...], {ordered: true})
 db.persons.insertOne({...}, {writeConcern: {w: 1, j: true, wtimeout: 200}})
 ---
 mongoimport <path> -d <database> -c <collection> --jsonArray --drop
+---
+db.movies.find({runtime: 60})
+db.movies.find({runtime: {$eq: 60}})
 ```
