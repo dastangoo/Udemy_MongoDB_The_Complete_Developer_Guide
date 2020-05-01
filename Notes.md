@@ -47,6 +47,7 @@ db.companies.drop()
 show collections
 db.numbers.drop()
 db.numbers.insertOne({a: NumbertInt(1)})
+A
 db.stats()
 typeof db.numbers.findOne().a
 db.patients.insertOne({})
@@ -57,5 +58,13 @@ db.patients.deleteMany({})
 db.books.aggregate([{$lookup: {from: "authros", localField: "authors", foreginField: "_id", as: "creators"}}])
 db.createCollection("posts", {<validator})
 db.runCommand({collMod: "posts"}, <validator>)
+---
+mongod --fork --conf /usr/local/etc/mongod.conf
+ps aux | grep mongod
+use admin
+db.shutdownServer()
+---
+// On Windows
+net start MongoDB
+net start MongoDB
 ```
-
