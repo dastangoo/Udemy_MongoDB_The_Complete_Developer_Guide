@@ -104,4 +104,5 @@ db.persons.insertOne({
 })
 db.persons.find().pretty()
 db.persons.findOne()
+db.hobbies.insertMany([...], {ordered: true})
 ```
