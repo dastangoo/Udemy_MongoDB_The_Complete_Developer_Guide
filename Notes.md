@@ -59,7 +59,7 @@ db.books.aggregate([{$lookup: {from: "authros", localField: "authors", foreginFi
 db.createCollection("posts", {<validator})
 db.runCommand({collMod: "posts"}, <validator>)
 ---
-mongod --fork --conf /usr/local/etc/mongod.conf
+mongod --fork --config /usr/local/etc/mongod.conf
 ps aux | grep mongod
 use admin
 db.shutdownServer()
@@ -67,4 +67,7 @@ db.shutdownServer()
 // On Windows
 net start MongoDB
 net start MongoDB
+---
+mongod --config /usr/local/etc/mongod.conf
+mongod -f /usr/local/etc/mongod.conf
 ```
