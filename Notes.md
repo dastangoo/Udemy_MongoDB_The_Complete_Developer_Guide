@@ -110,4 +110,7 @@ mongoimport <path> -d <database> -c <collection> --jsonArray --drop
 ---
 db.movies.find({runtime: 60})
 db.movies.find({runtime: {$eq: 60}})
+db.movies.find({runtime: {$ne: 60}})
+db.movies.find({runtime: {$le: 60}})
+db.movies.find({runtime: {$lte: 60}})
 ```
