@@ -108,9 +108,13 @@ db.persons.insertOne({...}, {writeConcern: {w: 1, j: true, wtimeout: 200}})
 ---
 mongoimport <path> -d <database> -c <collection> --jsonArray --drop
 ---
-db.movies.find({runtime: 60})
-db.movies.find({runtime: {$eq: 60}})
-db.movies.find({runtime: {$ne: 60}})
-db.movies.find({runtime: {$le: 60}})
-db.movies.find({runtime: {$lte: 60}})
+db.movies.find({runtime: 60}).pretty()
+db.movies.find({runtime: {$eq: 60}}).pretty()
+db.movies.find({runtime: {$ne: 60}}).pretty()
+db.movies.find({runtime: {$le: 60}}).pretty()
+db.movies.find({runtime: {$lte: 60}}).pretty()
+db.movies.find({"rating.average": {$gt: 7}}).pretty()
+db.movies.find({genres: "Drama"}).pretty()
+db.movies.find({genres: ["Drama"]}).pretty()
+db.movies.find({genres: ["Drama"]}).pretty().count()
 ```
