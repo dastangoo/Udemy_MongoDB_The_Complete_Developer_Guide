@@ -121,4 +121,8 @@ db.movies.find({runtime: {$in: [30, 42]}}).pretty()
 db.movies.find({runtime: {$nin: [30, 42]}}).pretty()
 db.movies.find({$or: [{"rating.average": {$lt: 5}}, {"rating.average": {$gt: 9.3}}]}).pretty()
 db.movies.find({$nor: [{"rating.average": {$lt: 5}}, {"rating.average": {$gt: 9.3}}]}).pretty()
+db.movies.find({$and: [{"rating.average": {$gt: 9}}, {genres: "Drama"}]}).pretty()
+db.movies.find({"rating.average": {$gt: 9}}, {genres: "Drama"}).pretty()
+db.movies.find({genres: "Drama", genres: "Horror"}).count()
+db.movies.find({$and: [{genres: "Drama", genres: "Horror"}]}).count()
 ```
