@@ -127,4 +127,6 @@ db.movies.find({genres: "Drama", genres: "Horror"}).count()
 db.movies.find({$and: [{genres: "Drama", genres: "Horror"}]}).count()
 db.movies.find({runtime: {$not: {$eq: 60}}}).count()
 db.movies.find({runtime: {$ne: 60}}).count()
+db.users.find({age: {$exists: true}})
+db.users.find({age: {$exists: true, $ne: null}})
 ```
