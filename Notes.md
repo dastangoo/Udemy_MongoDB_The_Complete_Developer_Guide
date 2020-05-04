@@ -129,4 +129,7 @@ db.movies.find({runtime: {$not: {$eq: 60}}}).count()
 db.movies.find({runtime: {$ne: 60}}).count()
 db.users.find({age: {$exists: true}})
 db.users.find({age: {$exists: true, $ne: null}})
+db.users.find({phone: {$type: "number"}}).pretty()
+db.users.find({phone: {$type: "double"}}).pretty()
+db.users.find({phone: {$type: ["double", "string"]}}).pretty()
 ```
