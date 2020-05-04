@@ -136,4 +136,6 @@ db.movies.findOne()
 db.movies.find({summary: {$regex: /musical/}}).pretty()
 db.sales.find({$expr: {$gt: ["$volume", "$target"]}}).pretty()
 db.sales.find({$expr: {$gt: [{$cond: {if: {$gte: ["$volume", 190]}, then: {$subtract:["$volume", 10]}, else: "$volume"}}, "$target"]}}).pretty()
+db.users.find({hobbies: {title: "Sports", frequency: 2}}).pretty()
+db.users.find({"hobbies.title": "Sports"}).pretty()
 ```
