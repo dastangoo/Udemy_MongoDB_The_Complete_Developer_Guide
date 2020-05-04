@@ -132,4 +132,6 @@ db.users.find({age: {$exists: true, $ne: null}})
 db.users.find({phone: {$type: "number"}}).pretty()
 db.users.find({phone: {$type: "double"}}).pretty()
 db.users.find({phone: {$type: ["double", "string"]}}).pretty()
+db.movies.findOne()
+db.movies.find({summary: {$regex: /musical/}}).pretty()
 ```
