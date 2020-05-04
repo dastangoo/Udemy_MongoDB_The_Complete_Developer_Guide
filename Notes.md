@@ -134,4 +134,6 @@ db.users.find({phone: {$type: "double"}}).pretty()
 db.users.find({phone: {$type: ["double", "string"]}}).pretty()
 db.movies.findOne()
 db.movies.find({summary: {$regex: /musical/}}).pretty()
+db.sales.find({$expr: {$gt: ["$volume", "$target"]}}).pretty()
+db.sales.find({$expr: {$gt: [{$cond: {if: {$gte: ["$volume", 190]}, then: {$subtract:["$volume", 10]}, else: "$volume"}}, "$target"]}}).pretty()
 ```
