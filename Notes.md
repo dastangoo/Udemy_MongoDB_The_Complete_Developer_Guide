@@ -176,4 +176,7 @@ db.users.updateMany({isSporty: true}, {$set: {phone: null}})
 db.users.updateMany({isSporty: true}, {$unset: {phone: null}})
 db.users.updateMany({}, {$rename: {age: "totalAge"}})
 db.users.updateOne({name: "Jerome"}, {$set: {age: 23}}, {upsert: true})
+db.suers.find({$and: [{"hobbies.title": "Sports"}, {"hobbies.frequency": {$gt: 3}}]}).pretty()
+db.users.find({hobbies: {$elemMatch: {title: "Sports", frequency: {$get: 3}}}}).pretty()
+db.users.updateMany({hobbies: {$elemMatch: {title: "Sports", frequency: {$gte: 3}}}}, {$set: {"hobbies.$.highFrequency": true}})
 ```
