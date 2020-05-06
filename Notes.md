@@ -169,4 +169,7 @@ db.users.updateOne({_id: <object_id>},{$se: {hobbies: [title: "Sports", frequenc
 db.users.updateMany({"hobbies.title": "Sports"}, {$set: {isSporty: true}})
 db.users.updateOne({name: "Jake"}, {$inc: {age: 1}})
 db.users.updateOne({name: "Jake"}, {$inc: {age: 1}, $set: {isSporty: false}})
+db.users.updateOne({name: "Jake"}, {$min: {age: 35}})
+db.users.updateOne({name: "Jake"}, {$max: {age: 35}})
+db.users.updateOne({name: "Jake"}, {$mul: {age: 1.1}})
 ```
