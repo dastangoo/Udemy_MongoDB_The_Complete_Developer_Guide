@@ -165,4 +165,5 @@ db.movies.find({genres: "Drama"}, {"genres.$": 1}).pretty()
 db.movies.find({genres: "Drama"}, {genres: {$elemMatch: {$eq: "Horror"}}}}).prety()
 db.movies.find({"rating.average": {$gt: 9}}, {genres: {$slice: 2}, name: 1}).pretty()
 db.movies.find({"rating.average": {$gt: 9}}, {genres: {$slice: [1,2]}, name: 1}).pretty()
+db.users.updateOne({_id: <object_id>},{$se: {hobbies: [title: "Sports", frequency: 5], {title: "Cooking", frequency: 3}, {title: "Hiking", frequency: 1}}})
 ```
