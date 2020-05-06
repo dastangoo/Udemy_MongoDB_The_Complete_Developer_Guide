@@ -139,4 +139,6 @@ db.sales.find({$expr: {$gt: [{$cond: {if: {$gte: ["$volume", 190]}, then: {$subt
 db.users.find({hobbies: {title: "Sports", frequency: 2}}).pretty()
 db.users.find({"hobbies.title": "Sports"}).pretty()
 db.users.find({hobbies: {$size: 3}}).pretty()
+db.moviestarts.find({genre: ["action", "thriller"]}).pretty()
+db.moviestarts.find({genre: {$all: ["action", "thriller"]}}).pretty()
 ```
