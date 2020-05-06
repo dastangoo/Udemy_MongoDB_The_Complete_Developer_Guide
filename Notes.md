@@ -144,4 +144,13 @@ db.moviestarts.find({genre: {$all: ["action", "thriller"]}}).pretty()
 db.users.find({$and: [{"hobbies.title"}, {"hobbiles.frequency": 2}]}).pretty()
 db.users.find({$and: [{"hobbies.title"}, {"hobbiles.frequency": {$gt: 2}}]}).pretty()
 db.users.find({hobbies: {$elemMatch: {title: "Sports", frequency: {$gte: 3}}}}).pretty()
+db.movies.find().count()
+db.movies.find().pretty()
+db.movies.find().next()
+const dataCursor = db.movies.find()
+dataCursor.next()
+dataCursor
+dataCursor.forEach(document => {printjson(document)})
+dataCursor.next()
+dataCursor.hasNext()
 ```
