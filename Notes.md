@@ -172,4 +172,6 @@ db.users.updateOne({name: "Jake"}, {$inc: {age: 1}, $set: {isSporty: false}})
 db.users.updateOne({name: "Jake"}, {$min: {age: 35}})
 db.users.updateOne({name: "Jake"}, {$max: {age: 35}})
 db.users.updateOne({name: "Jake"}, {$mul: {age: 1.1}})
+db.users.updateMany({isSporty: true}, {$set: {phone: null}})
+db.users.updateMany({isSporty: true}, {$unset: {phone: null}})
 ```
