@@ -161,4 +161,6 @@ db.movies.find().sort({"rating.average": 1, runtime: -1}).skip(10).pretty()
 db.movies.find().sort({"rating.average": 1, runtime: -1}).skip(10).limit(10).pretty()
 db.movies.find({name: 1, genres: 1, runtime: 1, rating: 1, _id: 0}).pretty()
 db.movies.find({name: 1, genres: 1, runtime: 1, "rating.average": 1, _id: 0}).pretty()
+db.movies.find({genres: "Drama"}, {"genres.$": 1}).pretty()
+db.movies.find({genres: "Drama"}, {genres: {$elemMatch: {$eq: "Horror"}}}}).prety()
 ```
