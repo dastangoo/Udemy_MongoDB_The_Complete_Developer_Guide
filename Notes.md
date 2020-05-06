@@ -141,4 +141,7 @@ db.users.find({"hobbies.title": "Sports"}).pretty()
 db.users.find({hobbies: {$size: 3}}).pretty()
 db.moviestarts.find({genre: ["action", "thriller"]}).pretty()
 db.moviestarts.find({genre: {$all: ["action", "thriller"]}}).pretty()
+db.users.find({$and: [{"hobbies.title"}, {"hobbiles.frequency": 2}]}).pretty()
+db.users.find({$and: [{"hobbies.title"}, {"hobbiles.frequency": {$gt: 2}}]}).pretty()
+db.users.find({hobbies: {$elemMatch: {title: "Sports", frequency: {$gte: 3}}}}).pretty()
 ```
