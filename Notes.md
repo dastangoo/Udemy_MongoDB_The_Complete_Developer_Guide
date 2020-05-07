@@ -195,4 +195,7 @@ db.users.updateOne({name: "Jake"}, {$push: {title: "Hiking", frequency: 2}})
 db.users.deleteOne({name: "Jake"})
 db.users.deleteMany({age: {$gt: 30}, isSporty: false})
 db.users.deleteMany({age: {$exists: false}, isSporty: false})
+db.users.deleteMany({})
+db.users.drop()
+db.dropDatabase()
 ```
