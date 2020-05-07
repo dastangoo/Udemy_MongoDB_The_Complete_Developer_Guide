@@ -198,4 +198,11 @@ db.users.deleteMany({age: {$exists: false}, isSporty: false})
 db.users.deleteMany({})
 db.users.drop()
 db.dropDatabase()
+mongoimport 125\ persons.json -d contactData -c contacts --jsonArray
+db.contacts.findOne()
+db.contacts.find({"dob.age": {$gt: 60}}).pretty()
+db.contacts.find({"dob.age": {$gt: 60}}).count()
+db.contacts.explain().find({"dob.age": {$gt: 60}})
+db.contacts.explain("executionStats").find({"dob.age": {$gt: 60}})
+db.contacts.createIndex({"dob.age": 1})
 ```
