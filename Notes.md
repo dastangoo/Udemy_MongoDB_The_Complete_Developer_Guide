@@ -184,4 +184,6 @@ db.users.find({"hobbies.frequency": {$gt: 2}}).count()
 db.users.updateMany({"hobbies.frequency": {$gt: 2}}, {$set: {"hobbies.$.goodFrequency": true}})
 db.users.find({totalAge: {$gt: 20}}).pretty
 db.users.updateMany({totalAge: {$gt: 30}}, {$inc: {"hobbies.$[].frequency": -1}})
+db.users.find({"hobbies.frequency": {$gt: 2}}).pretty()
+db.users.updateMany({"hobbies.frequency": {$gt: 2}}, {$set: {"hobbies.$[el].goodFrequency": true}}, {arrayFilters: [{"el.frequency": {$gt: 2}}]})
 ```
