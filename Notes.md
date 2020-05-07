@@ -188,4 +188,7 @@ db.users.find({"hobbies.frequency": {$gt: 2}}).pretty()
 db.users.updateMany({"hobbies.frequency": {$gt: 2}}, {$set: {"hobbies.$[el].goodFrequency": true}}, {arrayFilters: [{"el.frequency": {$gt: 2}}]})
 db.users.updateOne({name: "Jake"},{$push: {hobbies: {title: "Sports", frequency:2}}})
 db.users.updateOne({name: "Jake"}, {$push: {hobbies: {$each: [{title: "Sports", frequency: 2}, {title: "Hiking", frequency: 2}], $sort: {frequency: -1}, $slice: 1}}})
+db.users.find({name: "Jane"}).pretty()
+db.users.updateOne({name: "Jane"}, {$pull: {hobbies: {title: "Cars"}}})
+db.users.updateOne({name: "Jeffrey"}, {$pop: {hobbies: 1}})
 ```
