@@ -192,4 +192,7 @@ db.users.find({name: "Jane"}).pretty()
 db.users.updateOne({name: "Jane"}, {$pull: {hobbies: {title: "Cars"}}})
 db.users.updateOne({name: "Jeffrey"}, {$pop: {hobbies: 1}})
 db.users.updateOne({name: "Jake"}, {$push: {title: "Hiking", frequency: 2}})
+db.users.deleteOne({name: "Jake"})
+db.users.deleteMany({age: {$gt: 30}, isSporty: false})
+db.users.deleteMany({age: {$exists: false}, isSporty: false})
 ```
