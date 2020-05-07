@@ -214,4 +214,5 @@ db.explain().find({"dob.age": 35, gender: "male"})
 db.explain().find({gender: "male"})
 db.explain().find({"dob.age": 35}).sort({gender: "male"})
 db.contacts.getIndexes()
+db.contacts.createIndex({email: 1},{unique: true})
 ```
